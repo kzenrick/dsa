@@ -1,0 +1,55 @@
+Id,Data,Local,Partida,Campeao,ViceCampeao,Placar,Saldo
+1,"Jan. 15, 1967",Los Angeles Memorial Coliseum,"Green Bay 35, Kansas City 10",Green Bay,Kansas City,35 x 10,25
+2,"Jan. 14, 1968",Orange Bowl (Miami),"Green Bay 33, Oakland 14",Green Bay,Oakland,33 x 14,19
+3,"Jan. 12, 1969",Orange Bowl (Miami),"New York Jets 16, Baltimore 7",New York Jets,Baltimore,16 x 7,9
+4,"Jan. 11, 1970",Tulane Stadium (New Orleans),"Kansas City 23, Minnesota 7",Kansas City,Minnesota,23 x 7,16
+5,"Jan. 17, 1971",Orange Bowl (Miami),"Baltimore 16, Dallas 13",Baltimore,Dallas,16 x 13,3
+6,"Jan. 16, 1972",Tulane Stadium (New Orleans),"Dallas 24, Miami 3",Dallas,Miami,24 x 3,21
+7,"Jan. 14, 1973",Los Angeles Memorial Coliseum,"Miami 14, Washington 7",Miami,Washington,14 x 7,7
+8,"Jan. 13, 1974",Rice Stadium (Houston),"Miami 24, Minnesota 7",Miami,Minnesota,24 x 7,17
+9,"Jan. 12, 1975",Tulane Stadium (New Orleans),"Pittsburgh 16, Minnesota 6",Pittsburgh,Minnesota,16 x 6,10
+10,"Jan. 18, 1976",Orange Bowl (Miami),"Pittsburgh 21, Dallas 17",Pittsburgh,Dallas,21 x 17,4
+11,"Jan. 9, 1977","Rose Bowl (Pasadena, Calif.)","Oakland 32, Minnesota 14",Oakland,Minnesota,32 x 14,18
+12,"Jan. 15, 1978",Superdome (New Orleans),"Dallas 27, Denver 10",Dallas,Denver,27 x 10,17
+13,"Jan. 21, 1979",Orange Bowl (Miami),"Pittsburgh 35, Dallas 31",Pittsburgh,Dallas,35 x 31,4
+14,"Jan. 20, 1980","Rose Bowl (Pasadena, Calif.)","Pittsburgh 31, Los Angeles Rams 19",Pittsburgh,Los Angeles Rams,31 x 19,12
+15,"Jan. 25, 1981",Superdome (New Orleans),"Oakland 27, Philadelphia 10",Oakland,Philadelphia,27 x 10,17
+16,"Jan. 24, 1982","Silverdome (Pontiac, Mich.)","San Francisco 26, Cincinnati 21",San Francisco,Cincinnati,26 x 21,5
+17,"Jan. 30, 1983","Rose Bowl (Pasadena, Calif.)","Washington 27, Miami 17",Washington,Miami,27 x 17,10
+18,"Jan. 22, 1984",Tampa (Fla.) Stadium,"Los Angeles Raiders 38, Washington 9",Los Angeles Raiders,Washington,38 x 9,29
+19,"Jan. 20, 1985",Stanford (Calif.) Stadium,"San Francisco 38, Miami 16",San Francisco,Miami,38 x 16,22
+20,"Jan. 26, 1986",Superdome (New Orleans),"Chicago 46, New England 10",Chicago,New England,46 x 10,36
+21,"Jan. 25, 1987","Rose Bowl (Pasadena, Calif.)","New York Giants 39, Denver 20",New York Giants,Denver,39 x 20,19
+22,"Jan. 31, 1988",Jack Murphy Stadium (San Diego),"Washington 42, Denver 10",Washington,Denver,42 x 10,32
+23,"Jan. 22, 1989",Joe Robbie Stadium (Miami),"San Francisco 20, Cincinnati 16",San Francisco,Cincinnati,20 x 16,4
+24,"Jan. 28, 1990",Superdome (New Orleans),"San Francisco 55, Denver 10",San Francisco,Denver,55 x 10,45
+25,"Jan. 27, 1991",Tampa (Fla.) Stadium,"New York Giants 20, Buffalo 19",New York Giants,Buffalo,20 x 19,1
+26,"Jan. 26, 1992",Metrodome (Minneapolis),"Washington 37, Buffalo 24",Washington,Buffalo,37 x 24,13
+27,"Jan. 31, 1993","Rose Bowl (Pasadena, Calif.)","Dallas 52, Buffalo 17",Dallas,Buffalo,52 x 17,35
+28,"Jan. 30, 1994",Georgia Dome (Atlanta),"Dallas 30, Buffalo 13",Dallas,Buffalo,30 x 13,17
+29,"Jan. 29, 1995",Joe Robbie Stadium (Miami),"San Francisco 49, San Diego 26",San Francisco,San Diego,49 x 26,23
+30,"Jan. 28, 1996","Sun Devil Stadium (Tempe, Ariz.)","Dallas 27, Pittsburgh 17",Dallas,Pittsburgh,27 x 17,10
+31,"Jan. 26, 1997",Superdome (New Orleans),"Green Bay 35, New England 21",Green Bay,New England,35 x 21,14
+32,"Jan. 25, 1998",Qualcomm Stadium (San Diego),"Denver 31, Green Bay 24",Denver,Green Bay,31 x 24,7
+33,"Jan. 31, 1999",Pro Player Stadium (Miami),"Denver 34, Atlanta 19",Denver,Atlanta,34 x 19,15
+34,"Jan. 30, 2000",Georgia Dome (Atlanta),"St. Louis 23, Tennessee 16",St. Louis,Tennessee,23 x 16,7
+35,"Jan. 28, 2001","Raymond James Stadium (Tampa, Fla.)","Baltimore 34, New York Giants 7",Baltimore,New York Giants,34 x 7,27
+36,"Feb. 3, 2002",Superdome (New Orleans),"New England 20, St. Louis 17",New England,St. Louis,20 x 17,3
+37,"Jan. 26, 2003",Qualcomm Stadium (San Diego),"Tampa Bay 48, Oakland 21",Tampa Bay,Oakland,48 x 21,27
+38,"Feb. 1, 2004",Reliant Stadium (Houston),"New England 32, Carolina 29",New England,Carolina,32 x 29,3
+39,"Feb. 6, 2005","Alltel Stadium (Jacksonville, Fla.)","New England 24, Philadelphia 21",New England,Philadelphia,24 x 21,3
+40,"Feb. 5, 2006",Ford Field (Detroit),"Pittsburgh 21, Seattle 10",Pittsburgh,Seattle,21 x 10,11
+41,"Feb. 4, 2007",Dolphin Stadium (Miami),"Indianapolis 29, Chicago 17",Indianapolis,Chicago,29 x 17,12
+42,"Feb. 3, 2008","University of Phoenix Stadium (Glendale, Ariz.)","New York Giants 17, New England 14",New York Giants,New England,17 x 14,3
+43,"Feb. 1, 2009","Raymond James Stadium (Tampa, Fla.)","Pittsburgh 27, Arizona 23",Pittsburgh,Arizona,27 x 23,4
+44,"Feb. 7, 2010",Sun Life Stadium (Miami),"New Orleans 31, Indianapolis 17",New Orleans,Indianapolis,31 x 17,14
+45,"Feb. 6, 2011","Cowboys Stadium (Arlington, Texas)","Green Bay 31, Pittsburgh 25",Green Bay,Pittsburgh,31 x 25,6
+46,"Feb. 5, 2012",Lucas Oil Stadium (Indianapolis),"New York Giants 21, New England 17",New York Giants,New England,21 x 17,4
+47,"Feb. 3, 2013",Mercedes-Benz Superdome (New Orleans),"Baltimore 34, San Francisco 31",Baltimore,San Francisco,34 x 31,3
+48,"Feb. 2, 2014","MetLife Stadium (East Rutherford, N.J.)","Seattle 43, Denver 8",Seattle,Denver,43 x 8,35
+49,"Feb. 1, 2015","University of Phoenix Stadium (Glendale, Ariz.)","New England 28, Seattle 24",New England,Seattle,28 x 24,4
+50,"Feb. 7, 2016","Levi's Stadium (Santa Clara, Calif.)","Denver 24, Carolina 10",Denver,Carolina,24 x 10,14
+51,"Feb. 5, 2017",NRG Stadium (Houston),"New England 34, Atlanta 28",New England,Atlanta,34 x 28,6
+52,"Feb. 4, 2018",U.S. Bank Stadium (Minneapolis),"Philadelphia 41, New England 33",Philadelphia,New England,41 x 33,8
+53,"Feb. 3, 2019",Mercedes-Benz Stadium (Atlanta),"New England 13, Los Angeles Rams 3",New England,Los Angeles Rams,13 x 3,10
+54,"Feb. 2, 2020",Hard Rock Stadium (Miami),"Kansas City 31, San Francisco 20",Kansas City,San Francisco,31 x 20,11
