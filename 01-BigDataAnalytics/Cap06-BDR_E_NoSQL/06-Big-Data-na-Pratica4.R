@@ -14,7 +14,7 @@
 
 # https://www.ibm.com/communities/analytics/watson-analytics-blog/guide-to-sample-datasets/
 
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap06-BDR_E_NoSQL")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap06-BDR_E_NoSQL")
 getwd()
 
 # ----------- Carregando os pacotes -----------
@@ -397,3 +397,4 @@ print("Confusion Matrix Para Random Forest"); table(testing$Churn, pred_rf)
 # Recursos mais importantes
 ?varImpPlot
 varImpPlot(rfModel, sort=T, n.var = 17, main = 'Top 10 Feature Importance')
+
