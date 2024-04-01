@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap04-Graficos")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap04-Graficos")
 getwd()
 
 # Define os dados
@@ -7,6 +7,13 @@ x = rnorm(10, 5, 7)
 y = rpois(10, 7)
 z = rnorm(10, 6, 7)
 t = rpois(10, 9)
+
+# Função para escala
+mycex_2 <- function(var, r, f = sqrt){
+  x = f(max(0, var))
+  x_scaled = (x - min(x))/(max(x) - min(x))
+  max(1, r[1] + x_scaled * (r[2] - r[1]))
+}
 
 # Cria o plot
 plot(x, y,
@@ -19,11 +26,16 @@ plot(x, y,
      ylab = "Variável Dependente"
 )
 
-# Adiciona outros dados
-points(z, t, col="blue", pch=4)
+# Preenche o fundo com uma cor
+rect(par("usr")[1], par("usr")[3], par("usr")[2], par("usr")[4], col = 'palegoldenrod')
+
+points(x, y, col = 123, pch = 10, cex=mycex(y, r = c(0.3, 2)))
 
 # Adiciona outros dados
-points(y, t, col = 777, pch=9)
+points(z, t, col="blue", pch=4, cex=mycex(t, r = c(0.3, 2)))
+
+# Adiciona outros dados
+points(y, t, col = 777, pch=9, cex=mycex(y, r = c(0.3, 2)))
 
 # Cria a legenda
 legend(-6, 5.9,
@@ -50,3 +62,4 @@ ablineclip(h=min(y,t), lty=3, col="paleturquoise4", lwd = 1)
 ablineclip(h=median(c(median(y),median(t))), lty=3, col="paleturquoise4", lwd = 1)
 ablineclip(h=mean(c(mean(y),mean(t))), lty=3, col="darkgray", lwd = 2)
 ablineclip(h=max(y, t), lty=3, col="paleturquoise4", lwd = 1)
+

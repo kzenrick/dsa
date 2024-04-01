@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap04-Graficos")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap04-Graficos")
 getwd()
 
 cores = c("red", "green", "blue", "yellow", "orange", "brown", "cyan", "black", 
@@ -32,6 +32,7 @@ pie(fatias
 attach(iris)
 values = table(Species)
 labels = paste(names(values))
+
 pie(values, 
     labels = labels,
     col = c("steelblue1", "tomato2", "tan3"),

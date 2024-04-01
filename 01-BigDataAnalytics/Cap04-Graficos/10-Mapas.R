@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap04-Graficos")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap04-Graficos")
 getwd()
 
 cores = c("red", "green", "blue", "yellow", "orange", "brown", "cyan", "black", 
@@ -8,7 +8,7 @@ cores = c("red", "green", "blue", "yellow", "orange", "brown", "cyan", "black",
 # ablineclip(v=4, lty=3, col="paleturquoise4", lwd = 1)
 
 # Instala os pacotes
-install.packages(c("ggplot2", "maps", "mapdata"))
+install.packages(c( "maps", "mapdata"))
 
 # Carrega os pacotes
 library(ggplot2)

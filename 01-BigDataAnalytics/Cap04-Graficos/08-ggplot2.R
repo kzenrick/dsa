@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap04-Graficos")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap04-Graficos")
 getwd()
 
 cores = c("red", "green", "blue", "yellow", "orange", "brown", "cyan", "black", 
@@ -27,6 +27,7 @@ ggplot() + camada1
 
 # Construindo um modelo de regressão
 modelo_base <- lm(tip ~ total_bill, data = tips)
+
 modelo_fit <- data.frame(
   total_bill = tips$total_bill,
   predict(modelo_base, interval = "confidence")

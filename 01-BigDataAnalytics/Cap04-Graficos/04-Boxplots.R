@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap04-Graficos")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap04-Graficos")
 getwd()
 
 ?boxplot
@@ -31,3 +31,4 @@ horizontalboxplot = boxplot(data = sleep, extra ~group,
 horizontalboxplot = boxplot(data = sleep, extra ~group,
                             ylab = "", xlab = "", horizontal = T,
                             col = c("blue", "red4"))
+

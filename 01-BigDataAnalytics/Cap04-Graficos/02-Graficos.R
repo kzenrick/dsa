@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap04-Graficos")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap04-Graficos")
 getwd()
 
 # Listar pacotes carregados
@@ -82,7 +82,7 @@ png("Grafico.png", width = 500, height = 500, res = 72)
 
 plot(iris$Sepal.Length, iris$Petal.Length,
      col=iris$Species,
-     main="Gráfico gerado a partir da Iris")
+     main="Gráfico gerado a partir da Iris_2")
 
 dev.off()
 

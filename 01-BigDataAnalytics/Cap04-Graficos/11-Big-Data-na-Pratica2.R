@@ -1,9 +1,9 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap04-Graficos")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap04-Graficos")
 getwd()
 
 # library(plotrix)
 # ablineclip(v=4, lty=3, col="paleturquoise4", lwd = 1)
-install.packages("googleVis")
+ # install.packages("googleVis")
 library(googleVis)
 ?googleVis
 

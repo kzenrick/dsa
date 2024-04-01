@@ -141,8 +141,12 @@ cores
 barplot(mat1, beside = T, col = cores, ylim = c(0, as.integer(max(mat1 * 1.05))))
 
 df_mat1 <- as.data.frame(mat1)
-ggplot() +
-  geom_bar(data = df_mat1)
+head(df_mat1)
+
+ggplot(data = df_mat1
+       ,   aes(x = df_mat1$V1)
+       ) +
+  geom_bar()
 
 # Exercício 9 - Qual o erro do código abaixo?
 data(diamonds)

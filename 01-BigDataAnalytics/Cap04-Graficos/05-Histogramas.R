@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap04-Graficos")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap04-Graficos")
 getwd()
 
 # Definição dos dados
@@ -7,9 +7,12 @@ View(cars)
 dados = cars$speed
 min(dados);mean(dados);median(dados);max(dados)
 
+# Mostrar o boxplot
+boxplot(x = dados, col = 'wheat')
+
 # Construindo um histograma
 ?hist
-hist(dados)
+hist(dados, col = c('seashell', 'royalblue', 'snow', 'rosybrown', 'thistle', 'wheat', 'sandybrown'))
 
 # Conforme consta no help, o paramêtro breaks pode ser um dos itens abaixo:
 # * Um vetor para os pontos de quebra entre as células do histograma
