@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap03-Estruturas")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap03-Estruturas")
 getwd()
 
 # http://berkeleyearth.org/data
@@ -10,11 +10,12 @@ library(scales)
 library(data.table)
 
 # usando read.csv2()
-# system.time(df_test1 <- read_csv2("TemperaturasGlobais.csv"))
-# rm(df_test1)
+#system.time(df_test1 <- read_csv2("TemperaturasGlobais.csv"))
+#rm(df_test1)
 
 # usando read.table
 # system.time(df_test2 <- read.table("TemperaturasGlobais.csv"))
+# rm (df_test2)
 
 # usando fread
 ?fread

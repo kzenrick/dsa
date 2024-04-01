@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap03-Estruturas")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap03-Estruturas")
 getwd()
 
 hoje <- Sys.Date()
@@ -43,6 +43,7 @@ dts = c(1127056501, 1104295502, 1129233601, 1113547501, 1119826801, 1132519502, 
 mydates = dts
 class(mydates)
 
+mydates
 class(mydates) = c("POSIXT", "POSIXct")
 mydates
 

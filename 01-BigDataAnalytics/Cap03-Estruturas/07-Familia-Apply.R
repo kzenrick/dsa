@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap03-Estruturas")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap03-Estruturas")
 getwd()
 
 #  apply()  - arrays e matrizes
@@ -92,7 +92,7 @@ summary(tabela_basquete)
 # Como calcular o total de cestas por Equipe?
 
 # tapply() vs sqldf
-install.packages("sqldf")
+# install.packages("sqldf")
 library("sqldf")
 
 sqldf("select equipe, sum(num_cestas) from tabela_basquete group by equipe")
@@ -100,8 +100,12 @@ sqldf("select equipe, sum(num_cestas) from tabela_basquete group by equipe")
 tapply(tabela_basquete$num_cestas, tabela_basquete$equipe, sum)
 tapply(tabela_basquete$num_cestas, tabela_basquete$equipe, mean)
 
+sqldf("select equipe, sum(num_cestas), avg(num_cestas) from tabela_basquete group by equipe")
+
 # by
 ?by
+
+by(tabela_basquete, tabela_basquete$equipe, function (x) { mean(x$num_cestas) })
 
 dat <- data.frame(species = c(rep(c(1, 2, 3), each = 5)), 
                   petal.length=c(rnorm(5, 4.5, 1),
@@ -155,3 +159,4 @@ lista2
 
 rapply(lista2, sum)
 rapply(lista2, sum, how = "list")
+

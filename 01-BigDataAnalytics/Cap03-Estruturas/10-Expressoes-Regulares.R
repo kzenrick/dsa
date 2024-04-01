@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap03-Estruturas")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap03-Estruturas")
 getwd()
 
 # Busca os pacotes carregados

@@ -6,7 +6,7 @@
 # Configurando o diretório de trabalho
 # Coloque entre aspas o diretório de trabalho que você está usando no seu computador
 # Não use diretórios com espaço no nome
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap03-Estruturas")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap03-Estruturas")
 getwd()
 
 
