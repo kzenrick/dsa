@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap07-ManipulacaoDados")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap07-ManipulacaoDados")
 getwd()
 
 library(plyr)
@@ -10,6 +10,7 @@ library(gapminder)
 
 # Split - Apply - Combine
 ?ddply
+head(gapminder)
 df <- ddply(gapminder,
             ~ continent,
             summarize,

@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap07-ManipulacaoDados")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap07-ManipulacaoDados")
 getwd()
 
 # install.packages('quantmod')
@@ -101,3 +101,4 @@ saveRDS(PETR4.SA, file = 'PETR4.SA.rds') # Salva os dados em formato binário
 Ptr <- readRDS('PETR4.SA.rds')
 dir()
 head(Ptr)
+

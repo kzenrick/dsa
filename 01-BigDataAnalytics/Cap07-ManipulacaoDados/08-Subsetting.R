@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap07-ManipulacaoDados")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap07-ManipulacaoDados")
 getwd()
 
 ## Vetores

@@ -6,7 +6,7 @@
 # Configurando o diretório de trabalho
 # Coloque entre aspas o diretório de trabalho que você está usando no seu computador
 # Não use diretórios com espaço no nome
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap07-ManipulacaoDados")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap07-ManipulacaoDados")
 getwd()
 
 # Uso de bibliotecas --------
@@ -83,6 +83,7 @@ class(tabela)
 
 # Exercício 5 - Converta o item anterior em um dataframe
 df <-bind_rows(records)
+head(df)
 
 # RESPOSTA
 tab <- html_table(tabela)[[1]]
