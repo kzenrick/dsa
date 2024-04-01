@@ -1,5 +1,5 @@
 # Variaveis em R
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap02-Fundamentos")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap02-Fundamentos")
 getwd()
 
 # Criando variáveis

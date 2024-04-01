@@ -3,7 +3,7 @@
 
 # Configuração da pasta de trabalho
 # Não utilizar espaço no nome do diretório
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap02-Fundamentos")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap02-Fundamentos")
 
 # Nome dos contribuidores
 contributors()
@@ -27,7 +27,7 @@ install.packages('devtools')
 
 # Carregar o pacote
 library('ggplot2')
-library("caret", lib.loc="~/anaconda3/envs/rstudio/lib/R/library")
+library("caret", lib.loc="~/anaconda3/envs/dsa/lib/R/library")
 
 # Descarregar o pacote
 detach('ggplot2')
@@ -40,7 +40,7 @@ help(mean)
 
 # Para mais informações, use o SOS
 install.packages('sos')
-library('sos', lib.loc = "~/anaconda3/envs/rstudio/lib/R/library")
+library('sos', lib.loc = "~/anaconda3/envs/dsa/lib/R/library")
 findFn("fread")
 
 # Se não souber o nome da função
