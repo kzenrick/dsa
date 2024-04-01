@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap05-Arquivos")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap05-Arquivos")
 getwd()
 
 # Usando as funções bases (pacote utils)

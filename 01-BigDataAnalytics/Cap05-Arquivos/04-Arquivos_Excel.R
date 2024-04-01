@@ -1,10 +1,10 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap05-Arquivos")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap05-Arquivos")
 getwd()
 
-install.packages('rJava')
+#install.packages('rJava')
 install.packages("XLConnect")
 install.packages("xlsx")
-install.packages("readxl")
+#install.packages("readxl")
 install.packages("gdata")
 
 # Carregar todos os pacotes de acesso Excel pode dar conflito de namespace e depois

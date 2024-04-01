@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap05-Arquivos")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap05-Arquivos")
 getwd()
 
 # Mineração de Regras de Associação
@@ -6,7 +6,7 @@ getwd()
 # Big Data na Prática 3 - Mineração de Regra de Associação 
 
 # Esse é um material de bônus. 
-# Conteúdo sobre ese tema pode ser encontrado nos cursos: 
+# Conteúdo sobre esse tema pode ser encontrado nos cursos: 
 
 # Business Analytics 
 # Análise em Grafos Para Big Data
@@ -126,10 +126,11 @@ teams$team_long_name = str_replace_all(teams$team_long_name, ",", "_")
 teams$team_long_name = str_replace_all(teams$team_long_name, "-", "_")
 
 # Agrupando as equipes por país ---------
-CountryClub = Matches %>%
-  group_by(home_team_api_id, country_id) %>%
-  summarise(n=n()) %>%
-  left_join(league) %>% 
+# Agrupando as equipes por país
+CountryClub = Matches %>% 
+  group_by(home_team_api_id,country_id) %>% 
+  summarise(n=n()) %>% 
+  left_join(league) %>%
   left_join(teams, by=c("home_team_api_id" = "team_api_id"))
 
 # Preparando os dados para mineração das regras de associação
