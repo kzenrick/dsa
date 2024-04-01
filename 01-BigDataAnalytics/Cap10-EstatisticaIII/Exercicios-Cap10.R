@@ -9,10 +9,10 @@
 
 # Solução Lista de Exercícios - Capítulo 9
 
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics")
-source("/home/vitorino/Projetos/Python/git/R/DSA/BigDataAnalytics/function_estatistica.R")
+setwd("~/Documentos/dsa/BigDataAnalytics")
+source("~/Documentos/dsa/BigDataAnalytics/function_estatistica.R")
 
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap10-EstatisticaIII")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap10-EstatisticaIII")
 getwd()
 
 
@@ -142,6 +142,7 @@ print(media)
 
 # Cálculo do IC by R
 icr_1 <- t.test(amostra1$arr_delay)
+print(icr_1)
 
 # ----------
 # Resposta
@@ -164,7 +165,7 @@ print(media2)
 
 # Cálculo do IC by R
 icr_2 <- t.test(amostra2$arr_delay)
-
+print(icr_2)
 
 # Resposta
 lower <- media2 - 1.96 * erro_padrao_amostra2
@@ -172,7 +173,7 @@ upper <- media2 + 1.96 * erro_padrao_amostra2
 
 ic__2 <- c(lower, upper)
 print(ic__2)
-
+print(media2)
 
 # Exercício 6 - Crie um plot Visualizando os intervalos de confiança criados nos itens anteriores
 # Dica: Use o geom_point() e geom_errorbar() do pacote ggplot2
