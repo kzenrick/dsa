@@ -1,7 +1,7 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics")
-source("/home/vitorino/Projetos/Python/git/R/DSA/BigDataAnalytics/function_estatistica.R")
+setwd("~/Documentos/dsa/BigDataAnalytics")
+source("~/Documentos/dsa/BigDataAnalytics/function_estatistica.R")
 
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap11-MachineLearning/Regressao")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap11-MachineLearning/Regressao")
 getwd()
 
 # Problema de Negócio: Previsão de Despesas Hospitalares
@@ -47,7 +47,57 @@ cor(despesas[c('idade', 'bmi', 'filhos', 'gastos')])
 # Perceba que não existe um claro relacionamento entre as variáveis
 pairs(despesas[c('idade', 'bmi', 'filhos', 'gastos')])
 
+#install.packages("psych")
 library(psych)
 
 # Este gráfico fornece mais informações sobre o relacionamento entre as variáveis
 pairs.panels(despesas[c('idade', 'bmi', 'filhos', 'gastos')])
+
+# Etapa 3: Treine o modelo
+?lm
+modelo <- lm(gastos ~ idade + filhos + bmi + sexo + fumante + regiao, data = despesas)
+
+# similiar ao item anterior
+modelo <- lm(gastos ~ ., data = despesas)
+
+# visualizar os coeficientes
+modelo
+
+# Aqui verificamos os gastos previstos pelo modelo que devem ser iguais aos dados de treino
+previsao1 <- predict(modelo)
+class(previsao1)
+View(previsao1)
+
+# Prevendo os gastos com Dados de teste
+despesasteste <- read.csv("despesas-teste.csv")
+View(despesasteste)
+previsao2 <- predict(modelo, despesasteste)
+View(previsao2)
+
+# Etapa 4: Avaliando a Performance do Modelo
+# Mais detalhes sobre o modelo
+summary(modelo)
+
+
+# Etapa 5: Otimizando a Performance do Modelo
+
+# Adicionando uma variável com o dobro do valor das idades
+despesas$idade2 <- despesas$idade ^ 2
+
+# Adicionando um indicador para BMI >= 30
+despesas$bmi30 <- ifelse(despesas$bmi >= 30, 1, 0)
+
+View(despesas)
+
+# Criando o modelo final
+modelo_v2 <- lm(gastos ~ idade + idade2 + filhos + bmi + sexo +
+                  bmi30 * fumante + regiao, data = despesas)
+
+summary(modelo_v2)
+
+# Dados de teste
+despesasteste <- read.csv("despesas-teste.csv")
+View(despesasteste)
+previsao <- predict(modelo, despesasteste)
+class(previsao)
+View(previsao)

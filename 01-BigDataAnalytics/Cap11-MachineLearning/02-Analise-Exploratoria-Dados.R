@@ -1,7 +1,7 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics")
-source("/home/vitorino/Projetos/Python/git/R/DSA/BigDataAnalytics/function_estatistica.R")
+setwd("~/Documentos/dsa//BigDataAnalytics")
+source("~/Documentos/dsa/BigDataAnalytics/function_estatistica.R")
 
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap11-MachineLearning")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap11-MachineLearning")
 getwd()
 
 # Carrega o pacote readr
