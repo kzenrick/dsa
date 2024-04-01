@@ -1,7 +1,7 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics")
-source("/home/vitorino/Projetos/Python/git/R/DSA/BigDataAnalytics/function_estatistica.R")
+setwd("~/Documentos/dsa/BigDataAnalytics")
+source("~/Documentos/dsa/BigDataAnalytics/function_estatistica.R")
 
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap09-EstatisticaII")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap09-EstatisticaII")
 getwd()
 
 # Exemplo: A probabilidade de um paciente com um ataque cardíaco morrer do ataque é de 0.04 
@@ -23,6 +23,7 @@ print(a)
 # Desenhando a distribuição de probabilidades
 graph <- function(n,p){
   x <- dbinom(0:n, size = n, prob = p)
+  cat(sum(x[1:5]))
   barplot(x,ylim=c(0,1),names.arg=0:n,
           main=sprintf(paste('Distribuição Binomial (n,p) ',n,p,sep=',')))
 }

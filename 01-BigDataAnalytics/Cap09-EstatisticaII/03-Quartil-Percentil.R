@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap09-EstatisticaII")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap09-EstatisticaII")
 getwd()
 
 ##### Quartis #####
@@ -22,3 +22,4 @@ quantile(num_fichas, c(.80))
 quantile(num_fichas, c(.98))
 
 quantile(num_fichas, c(1/6, 2/6, 3/6, 4/6, 5/6, 6/6))
+

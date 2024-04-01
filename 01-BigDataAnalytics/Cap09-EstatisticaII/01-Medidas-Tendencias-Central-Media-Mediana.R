@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap09-EstatisticaII")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap09-EstatisticaII")
 getwd()
 
 # Cálculo da média

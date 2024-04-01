@@ -1,7 +1,7 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics")
-source("/home/vitorino/Projetos/Python/git/R/DSA/BigDataAnalytics/function_estatistica.R")
+setwd("~/Documentos/dsa/BigDataAnalytics")
+source("~/Documentos/dsa/BigDataAnalytics/function_estatistica.R")
 
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap09-EstatisticaII")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap09-EstatisticaII")
 getwd()
 
 
@@ -11,3 +11,4 @@ getwd()
 ?dpois
 dpois(2, 0.5)
 dpois(0, 0.5)
+

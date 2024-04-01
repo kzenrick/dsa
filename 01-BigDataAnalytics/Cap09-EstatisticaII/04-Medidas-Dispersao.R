@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap09-EstatisticaII")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap09-EstatisticaII")
 getwd()
 
 #### DESVIO PADRÂO ####
@@ -33,6 +33,4 @@ sd(Maq3)
 var(Maq1) 
 var(Maq2)
 var(Maq3)
-
-
 

@@ -1,9 +1,9 @@
 # Solução Lista de Exercícios - Capítulo 9
 
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics")
-source("/home/vitorino/Projetos/Python/git/R/DSA/BigDataAnalytics/function_estatistica.R")
+setwd("~/Documentos/dsa/BigDataAnalytics")
+source("~/Documentos/dsa/BigDataAnalytics/function_estatistica.R")
 
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap09-EstatisticaII")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap09-EstatisticaII")
 getwd()
 
 # Exercício 1 - Gere 1000 números de uma distribuição normal com média 3 e sd = .25 e grave no objeto chamado x.
@@ -84,7 +84,7 @@ d %>% filter(x >= 84) %>% summarise(n = n())
 
 quantile(x)
 
-# -- Respota
+# -- Resposta
 pnorm(84, mean = 72, sd = 15.2, lower.tail = F)
 
 # Exercício 5 - Suponha que o tempo médio de check-out de um caixa de supermercado seja de três minutos. 

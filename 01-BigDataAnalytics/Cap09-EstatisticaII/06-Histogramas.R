@@ -1,4 +1,4 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap09-EstatisticaII")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap09-EstatisticaII")
 getwd()
 
 # Exemplo: Os seguintes dados representam o número de acidentes diários em um complexo industrial 
@@ -25,3 +25,4 @@ ablineclip(h=7, lty=3, col="slategray2", lwd = 1)
 ablineclip(h=10, lty=3, col="slategray2", lwd = 1)
 ablineclip(h=13, lty=3, col="slategray2", lwd = 1)
 ablineclip(h=15, lty=3, col="slategray2", lwd = 1)
+

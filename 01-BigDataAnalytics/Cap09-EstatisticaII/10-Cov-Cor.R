@@ -1,7 +1,7 @@
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics")
-source("/home/vitorino/Projetos/Python/git/R/DSA/BigDataAnalytics/function_estatistica.R")
+setwd("~/Documentos/dsa/BigDataAnalytics")
+source("~/Documentos/dsa/BigDataAnalytics/function_estatistica.R")
 
-setwd("~/Projetos/Python/git/R/DSA/BigDataAnalytics/Cap09-EstatisticaII")
+setwd("~/Documentos/dsa/BigDataAnalytics/Cap09-EstatisticaII")
 getwd()
 
 cores = c('yellowgreen', 'wheat1', 'violetred3', 'turquoise2', 'tomato4', 
@@ -27,7 +27,7 @@ ggscatter(my_data,
           y = "wt", 
           add = "reg.line",
           conf.int = TRUE, 
-          cor.coef = TRUE, 
+          #cor.coef = TRUE, 
           cor.method = "pearson",
           xlab = "Autonomia",
           ylab = "Peso do Veículo")
