@@ -1,0 +1,6 @@
+# juntar o arquivo
+cat household_power_data_a* -> household_power_data.tar.gz
+
+# descompactar
+tar -xzvf household_power_data.tar.gz
+
