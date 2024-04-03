@@ -1,0 +1,18 @@
+Para executar o Mini-Projeto 1:
+
+1- Instale o Anaconda Python.
+
+2- Instale os pacotes necessários:
+
+!pip install streamlit
+!pip install folium
+!pip install plotly
+!pip install streamlit_folium
+
+3- Abra o terminal ou prompt de comando, navegue até a pasta onde você colocou os arquivos e digite:
+
+streamlit run Mini-Projeto1.py
+
+4- O Dashboard será aberto no seu navegador padrão.
+
+5- Explore o Dashboard e tente reconhecer os conceitos abordados no curso até aqui.

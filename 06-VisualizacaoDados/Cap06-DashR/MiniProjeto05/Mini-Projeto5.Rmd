@@ -1,0 +1,436 @@
+---
+title: "Mini-Projeto 5"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+library(readxl)
+library(plotly)
+library(tidyverse)
+library(flexdashboard)
+library(shiny)
+library(shinyWidgets)
+
+#------------------ Definação das Cores Globais ------------------
+
+bloco1_total     <- "#2e0610"
+bloco2_instagram <- "#1fb43f"
+bloco3_facebook  <- "#5f30be"
+bloco4_twitter   <- "#d48831"
+
+#------------------ Carga de Dados ------------------
+
+dados <- read.csv("dados/dataset.csv")
+
+# Altera as variáveis para o tipo fator (exceto a data)
+dados$Data          <- as.Date(dados$Data)
+dados$Mes           <- as.factor(dados$Mes)
+dados$Rede          <- as.factor(dados$Rede) 
+dados$Tipo_Mensagem <- as.factor(dados$Tipo_Mensagem)
+dados$Conta         <- as.factor(dados$Conta)
+dados$Usuario       <- as.factor(dados$Usuario)
+
+#------------------ Limpeza e Processamento dos Dados Gerais ------------------
+
+df_diario <- dados %>% 
+  group_by(Data, Rede) %>% 
+  count(Rede) %>% 
+  rename(Contatos = n) %>% 
+  spread(Rede, Contatos, fill = 0) %>% 
+  arrange(Data) %>% 
+  ungroup() %>% 
+  mutate(facebook_cum = cumsum(facebook), 
+         instagram_cum = cumsum(instagram), 
+         twitter_cum = cumsum(twitter)) 
+
+total_contatos_platforma <- dados %>% 
+  group_by(Rede) %>%
+  count(Rede) %>% 
+  rename(Contatos = n) %>% 
+  spread(Rede, Contatos) %>% 
+  mutate(total = facebook + instagram + twitter)
+
+seguidores_Usuario <- dados %>% 
+  group_by(Usuario, Rede) %>%
+  count() %>%
+  rename(Contatos = n) %>% 
+  spread(Rede, Contatos) %>% 
+  ungroup() %>% 
+  mutate(total = (facebook + instagram + twitter)) %>% 
+  arrange(-total)
+
+seguidores_Usuario$total <- as.factor(seguidores_Usuario$total)
+
+```
+
+Dashboard
+=======================================================================
+
+Row {data-width=350}
+-----------------------------------------------------------------------
+
+### Total 
+
+```{r}
+renderValueBox({
+  valueBox(value = paste(format(total_contatos_platforma$total, big.mark = ","), "", sep = " "), 
+         caption = "Total de Seguidores", 
+         icon = "far fa-flag", 
+         color = bloco1_total)
+})
+```
+
+### Instagram 
+
+```{r}
+renderValueBox({
+  valueBox(value = paste(format(total_contatos_platforma$instagram[1], big.mark = ","), " (",
+                       round(100 * total_contatos_platforma$instagram[1] / total_contatos_platforma$total[1], 1), "%)", sep = ""), 
+         caption = "Seguidores do Instagram", 
+         icon = "fab fa-instagram", 
+         color = bloco2_instagram)
+})
+```
+
+### Facebook 
+
+```{r}
+renderValueBox({
+  valueBox(value = paste(format(total_contatos_platforma$facebook[1], big.mark = ","), " (",
+                       round(100 * total_contatos_platforma$facebook[1] / total_contatos_platforma$total[1], 1), "%)", sep = ""), 
+         caption = "Seguidores do Facebook", 
+         icon = "fab fa-facebook", 
+         color = bloco3_facebook)
+})
+```
+
+### Twitter {.value-box}
+
+```{r}
+renderValueBox({
+  valueBox(value = paste(format(total_contatos_platforma$twitter[1], big.mark = ","), " (",
+                       round(100 * total_contatos_platforma$twitter[1] / total_contatos_platforma$total[1], 1), "%)", sep = ""), 
+         caption = "Seguidores do Twitter", 
+         icon = "fab fa-twitter", 
+         color = bloco4_twitter)
+})
+```
+
+Row {.tabset}
+-----------------------------------------------------------------------
+
+### Seguidores Acumulados Por Dia
+
+```{r}
+plotly::plot_ly(data = df_diario,
+                x = ~ Data,
+                y = ~ facebook_cum, 
+                name = 'Facebook', 
+                fillcolor = bloco3_facebook,
+                type = 'scatter',
+                mode = 'none', 
+                stackgroup = 'one') %>%
+    plotly::add_trace(y = ~ twitter_cum,
+                      name = "Twitter",
+                      fillcolor = bloco4_twitter) %>% 
+    plotly::add_trace(y = ~ instagram_cum,
+                      name = "Instagram",
+                      fillcolor = bloco2_instagram) %>%
+    plotly::layout(title = "",
+                   yaxis = list(title = "Número Acumulado de Seguidores"),
+                   xaxis = list(title = "Data", type = "date"),
+                   legend = list(x = 0.1, y = 0.9),
+                   hovermode = "compare")
+```
+
+
+### Seguidores Diários
+
+```{r}
+
+df_diario <- dados %>% 
+  group_by(Data, Rede) %>% 
+  count(Rede) %>% 
+  rename(Contatos = n) %>% 
+  spread(Rede, Contatos, fill = 0) %>% 
+  arrange(Data) %>%
+  ungroup()
+
+df_diario %>%
+    plotly::plot_ly() %>%
+    plotly::add_trace(
+        x = ~Data,
+        y = ~instagram,
+        type = "scatter",
+        mode = "lines+markers",
+        name = "Instagram",
+        marker = list(color = bloco2_instagram),
+        line = list(color = bloco2_instagram , width = 2)) %>%
+    plotly::add_trace(
+        x = ~Data,
+        y = ~facebook,
+        type = "scatter",
+        mode = "lines+markers",
+        name = "Facebook",
+        marker = list(color = bloco3_facebook),
+        line = list(color = bloco3_facebook, width = 2)) %>%
+    plotly::add_trace(
+        x = ~Data,
+        y = ~twitter,
+        type = "scatter",
+        mode = "lines+markers",
+        name = "Twitter",
+        marker = list(color = bloco4_twitter),
+        line = list(color = bloco4_twitter , width = 2)) %>% 
+    plotly::layout(
+        title = "",
+        legend = list(x = 0.1, y = 0.9),
+        yaxis = list(title = "Evolução do Número de Seguidores"),
+        xaxis = list(title = "Data"),
+        hovermode = "compare",
+        margin = list(b = 10, t = 10, pad = 2))
+
+```
+
+### Instagram
+
+```{r}
+composition <- dados %>% 
+    group_by(Rede, Tipo_Mensagem) %>% 
+    count() %>%
+    rename(Contatos = n) %>% 
+    spread(Rede, Contatos)
+
+instagram <- plot_ly(composition, 
+                    labels = ~Tipo_Mensagem, 
+                    values = ~instagram, type = 'pie') %>% 
+    layout(title = 'Interações dos Seguidores do Instagram',
+           xaxis = list(showgrid = FALSE, 
+                        zeroline = FALSE, 
+                        showticklabels = FALSE),
+           yaxis = list(showgrid = FALSE, 
+                        zeroline = FALSE, 
+                        showticklabels = FALSE))
+instagram
+```
+
+### Facebook
+
+```{r}
+facebook <- plot_ly(composition, 
+        labels = ~Tipo_Mensagem, 
+        values = ~facebook, type = 'pie') %>% 
+    layout(title = 'Interações dos Seguidores do Facebook',
+           xaxis = list(showgrid = FALSE, 
+                        zeroline = FALSE, 
+                        showticklabels = FALSE),
+           yaxis = list(showgrid = FALSE, 
+                        zeroline = FALSE, 
+                        showticklabels = FALSE))
+
+facebook
+```
+
+### Twitter
+
+```{r}
+twitter <- plot_ly(composition, 
+                    labels = ~Tipo_Mensagem, 
+                    values = ~twitter, type = 'pie') %>% 
+    layout(title = 'Interações dos Seguidores do Twitter',
+           xaxis = list(showgrid = FALSE, 
+                        zeroline = FALSE, 
+                        showticklabels = FALSE),
+           yaxis = list(showgrid = FALSE, 
+                        zeroline = FALSE, 
+                        showticklabels = FALSE))
+twitter
+```
+
+Seguidores Por Conta
+=======================================================================
+
+Row 
+-------------------------------------
+### Top Seguidores Mais Frequentes
+
+```{r}
+x <- dados %>% 
+    group_by(Conta, Rede) %>% 
+    count() %>% 
+    arrange(-n) %>%
+    rename(Contatos = n, Contas = Conta) %>%  
+    filter(Contatos >= 3)
+
+p <- plotly::plot_ly(
+    data = x[1:30,],
+    x = ~Contas,
+    y = ~Contatos,
+    type = "bar",
+    marker = list(color = c('rgba(222,45,38,0.8)', rep('rgba(204,204,204,1)', 29)))) %>% 
+    plotly::layout(
+        barmode = "stack",
+        yaxis = list(title = "Total de Seguidores Por Conta", type = "log"),
+        xaxis = list(title = ""),
+        hovermode = "compare",
+        margin = list(b = 10, t = 10, pad = 2))
+
+p <- layout(p, xaxis = list(categoryarray = ~Contas, categoryorder = "array"))
+p
+```
+
+row {data-width=300}
+-------------------------------------
+
+### Usuarios Mais Frequentes
+
+```{r}
+tbl <- reactable::reactable(x,
+                            pagination = FALSE,
+                            highlight = TRUE,
+                            height = 370,
+                            sortable = TRUE,
+                            borderless = FALSE,
+                            defaultPageSize = nrow(df_rates),
+                            defaultSortOrder = "desc",
+                            defaultSorted = "Contatos",
+                            columns = list(
+                                Contas = reactable::colDef(
+                                    name = "Contas", 
+                                    minWidth = 50, 
+                                    maxWidth = 100),
+                                Contatos = reactable::colDef(
+                                    name = "Contatos",  
+                                    minWidth = 50, 
+                                    maxWidth = 100, 
+                                    defaultSortOrder = "desc"))
+)
+
+library(htmltools)
+htmltools::div(class = "standings",
+               htmltools::div(class = "title",
+               htmltools::h5("Clique no Nome da Coluna")),
+               tbl,
+               paste("Última Data Registrada:", max(dados$Data))
+)
+
+# Botão de download
+ui <- fluidPage(downloadButton("downloadData", "Download"))
+
+server <- function(input, output) {
+  output$downloadData <- downloadHandler(
+    filename = function() {
+      paste("dados-", "usuarios-frequentes", ".csv", sep="")
+    },
+    content = function(file) {
+      write.csv(x, file)
+    }
+  )
+}
+
+shinyApp(ui, server)
+
+```
+
+
+Seguidores Por Usuario
+=======================================================================
+
+Row 
+-------------------------------------
+### Seguidores Por Usuario
+
+```{r}
+p <- plotly::plot_ly(
+    data = seguidores_Usuario,
+    x = ~Usuario,
+    y = ~instagram,
+    type = "bar",
+    name = "Instagram",
+    marker = list(color = bloco2_instagram)) %>% 
+    plotly::add_trace(
+    y=~facebook,
+    name = "Facebook",
+    marker = list(color = bloco3_facebook)) %>% 
+    plotly::add_trace(
+        y = ~twitter,
+        name = "Twitter",
+        marker = list(color = bloco4_twitter)) %>% 
+    plotly::layout(
+        barmode = "stack",
+        yaxis = list(title = "Total Registros", type = "log"),
+        xaxis = list(title = ""),
+        hovermode = "compare",
+        legend = list(x = 0.8, y = 0.9),
+        margin = list(b = 10, t = 10, pad = 2))
+
+p <- layout(p, xaxis = list(categoryarray = ~Usuario, categoryorder = "array"))
+p
+```
+
+row {data-width=330}
+-------------------------------------
+
+### Seguidores Por Usuario
+
+
+```{r}
+tbl <- reactable::reactable(seguidores_Usuario,
+                            pagination = FALSE,
+                            highlight = TRUE,
+                            height = 370,
+                            sortable = TRUE,
+                            borderless = TRUE,
+                            defaultPageSize = nrow(df_rates),
+                            defaultSortOrder = "desc",
+                            defaultSorted = "total",
+                            columns = list(
+                                Usuario = reactable::colDef(
+                                    name = "Usuario", 
+                                    minWidth = 50, 
+                                    maxWidth = 100),
+                                facebook = reactable::colDef(
+                                    name = "Facebook",  
+                                    minWidth = 50, 
+                                    maxWidth = 100, 
+                                    defaultSortOrder = "desc"),
+                                instagram = reactable::colDef(
+                                    name = "Instagram",  
+                                    minWidth = 50, 
+                                    maxWidth = 100),
+                                twitter = reactable::colDef(
+                                    name = "Twitter",  
+                                    minWidth = 50, 
+                                    maxWidth = 100),
+                                total = reactable::colDef(
+                                    name = "Total",  
+                                    minWidth = 50, 
+                                    maxWidth = 100))
+)
+
+library(htmltools)
+htmltools::div(class = "standings",
+               htmltools::div(class = "title",
+               htmltools::h5("Clique no Nome da Coluna")),
+               tbl,
+               paste("Última Data Registrada:", max(dados$Data))
+)
+
+ui <- fluidPage(downloadButton("downloadData", "Download"))
+
+server <- function(input, output) {
+  output$downloadData <- downloadHandler(
+    filename = function() {
+      paste("dados-", "seguidores-usuarios", ".csv", sep="")
+    },
+    content = function(file) {
+      write.csv(seguidores_Usuario, file)
+    }
+  )
+}
+
+shinyApp(ui, server)
+```

@@ -1,0 +1,12 @@
+Para executar o Dashoard:
+
+1- Inicialize o H2O Wave em um terminal ou prompt de comando.
+
+2- Em outro terminal ou prompt de comando, instale os pacotes:
+
+pip install h2o
+pip install h2o_wave
+
+3- No outro terminal ou prompt de comando execute sua data app:
+
+wave run dash2.py
